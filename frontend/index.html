@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova — Voice Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="grid"></div>
+
+  <main class="app-shell">
+    <header class="topbar glass">
+      <div class="brand">
+        <div class="brand-mark">N</div>
+        <div>
+          <div class="brand-name">Nova</div>
+          <div class="brand-subtitle">AI Voice Assistant</div>
+        </div>
+      </div>
+      <div class="status-pill"><span class="status-dot"></span><span id="statusText">Ready</span></div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">VOICE • INTELLIGENCE • CONVERSATION</p>
+        <h1>Talk naturally.<br><span>Let Nova think.</span></h1>
+        <p class="hero-description">Ask a question using your microphone and hear an AI-generated answer in real time.</p>
+      </div>
+
+      <div class="assistant-stage">
+        <div class="orbital orbital-a"></div>
+        <div class="orbital orbital-b"></div>
+        <div class="orbital orbital-c"></div>
+
+        <div id="orb" class="assistant-orb">
+          <div class="orb-core">
+            <div class="mic-icon" id="micIcon">🎙</div>
+          </div>
+        </div>
+
+        <div class="state-label" id="stateLabel">How can I help you?</div>
+        <div class="timer" id="timer">00:00</div>
+
+        <div class="wave" id="wave">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+
+        <button id="micButton" class="mic-button" aria-label="Start recording">
+          <span class="mic-button-icon">🎙</span>
+          <span id="micButtonText">Start speaking</span>
+        </button>
+
+        <button id="stopButton" class="stop-button" hidden>Stop recording</button>
+      </div>
+
+      <aside class="conversation glass">
+        <div class="conversation-header">
+          <div>
+            <p class="eyebrow">CONVERSATION</p>
+            <h2>Recent interaction</h2>
+          </div>
+          <button id="clearButton" class="clear-button">Clear</button>
+        </div>
+
+        <div id="conversation" class="messages">
+          <div class="empty-state" id="emptyState">
+            <div class="empty-icon">✦</div>
+            <p>Your conversation will appear here.</p>
+            <span>Press the microphone and start talking.</span>
+          </div>
+        </div>
+
+        <div class="pipeline">
+          <div class="pipeline-step active"><span>01</span><b>Listen</b><small>Whisper STT</small></div>
+          <div class="pipeline-line"></div>
+          <div class="pipeline-step"><span>02</span><b>Think</b><small>Qwen LLM</small></div>
+          <div class="pipeline-line"></div>
+          <div class="pipeline-step"><span>03</span><b>Speak</b><small>XTTS-v2</small></div>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <span>Local AI Voice Assistant</span>
+      <span>Whisper · Qwen · XTTS-v2</span>
+    </footer>
+  </main>
+
+  <audio id="responseAudio" hidden></audio>
+  <script src="script.js"></script>
+</body>
+</html>

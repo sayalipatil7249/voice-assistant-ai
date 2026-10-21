@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environments and editor files
+.venv/
+venv/
+xtts_venv/
+.idea/
+.vscode/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+
+# Model weights and downloaded caches
+*.onnx
+*.pt
+*.pth
+*.bin
+*.safetensors
+models/
+checkpoints/
+hf_cache/
+
+# Recordings and generated audio (voice samples are biometric data)
+*.wav
+*.mp3
+*.mpeg
+*.webm
+*.ogg
+*.flac
+
+# OS files
+.DS_Store
+Thumbs.db
